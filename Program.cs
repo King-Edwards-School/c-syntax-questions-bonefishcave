@@ -4,8 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Question1(args);
-            Question2(args);
+            //Question1(args);
+            //Question2(args);
+            Question3(args);
         }
 
         static void Question1(string[] args)
@@ -34,17 +35,17 @@
                 Count++;
                 if (Count % 10 == 0)
                 {
-                    Console.WriteLine("X");
+                    Console.Write("X");
                 }
                 else
                 {
                     if (Count % 5 == 0)
                     {
-                        Console.WriteLine("V");
+                        Console.Write("V");
                     }
                     else
                     {
-                        Console.WriteLine("/");
+                        Console.Write("/");
                     }
                 }
             }
@@ -76,7 +77,35 @@
             Console.WriteLine("Total number of prime factors is: " + count);
         }
 
-        static void Question3(string[] args)
+        static void Question3(string[] args) // this block finds all of the consecutive numbers that factor into the user input
+        {
+            Console.WriteLine("Enter an integer greater than 1:");
+            int X = Convert.ToInt32(Console.ReadLine());
+            int Product = 1;
+            int Factor = 0;
+
+            while (Product < X)
+            {
+                Factor++;
+                Product = Product * Factor; // cycling through until prodct is made greater than or equal to the user input
+            }
+            if (X == Product) // once x is made equal to the product
+            {
+                Product = 1;                       //factor represents the largest number that goes into user input
+                for (int N = 1; N <= Factor; N++) // continues while n is less than or equal to factor
+                {
+                    Product = Product * N; // this works by finding the largest number that factors into user input
+                    Console.WriteLine(N);
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("No result"); // there is no combination of consecutive integers that factor into the user input 
+            }
+        }
+
+        static void Question4(string[] args)
         {
             
         }
