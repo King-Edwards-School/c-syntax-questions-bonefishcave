@@ -4,6 +4,12 @@
     {
         static void Main(string[] args)
         {
+            Question1(args);
+            Question2(args);
+        }
+
+        static void Question1(string[] args)
+        {
             Console.WriteLine("Enter an integer:");
             int Number1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter another Integer:");
@@ -42,7 +48,40 @@
                     }
                 }
             }
+        }
+        static void Question2(string[] args)
+        {
+            Console.WriteLine("enter an integer greater than 1:");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            int count = 0;
 
+            int X = 2;
+            while (Number > 1)
+            {
+                bool multi = false;
+                while (Number % X == 0) //while 2 is a factor of Number
+                {
+                    if (!multi)
+                    {
+                        Console.WriteLine(X); // X is the prime factor
+                    }
+                    count = count + 1; //counting the number of prime factors
+                    multi = true;
+                    Number = Number / X;
+
+
+                }
+                X = X + 1; //moves on to the next possible prime factor
+            }
+            Console.WriteLine("Total number of prime factors is: " + count);
+        }
+
+        static void Question3(string[] args)
+        {
+            
         }
     }
 }
+
+
+
